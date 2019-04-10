@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe("Gate", () => {
+describe("Dashboard", () => {
   it("should render all the right things on mount", () => {
     const { getByText } = render(<Dashboard />);
 

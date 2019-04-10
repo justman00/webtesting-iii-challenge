@@ -17,3 +17,29 @@ describe("Gate", () => {
 
   it("should not be closed or opened if it is locked", () => {});
 });
+
+describe("Display", () => {
+  it("displays 'Closed' if the `closed` prop is `true`", () => {
+    const { getByText } = render(<Display closed />);
+
+    getByText(/closed/i);
+  });
+
+  it("displays 'Open' if the `closed` prop is `false`", () => {
+    const { getByText } = render(<Display closed={false} />);
+
+    getByText(/open/i);
+  });
+
+  it("displays 'Unlocked' if the `locked` prop is `false`", () => {
+    const { getByText } = render(<Display locked={false} />);
+
+    getByText(/unlocked/i);
+  });
+
+  it("displays 'Locked' if the `locked` prop is `true`", () => {
+    const { getByText } = render(<Display locked={true} />);
+
+    getByText(/locked/i);
+  });
+});
