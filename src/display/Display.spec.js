@@ -38,8 +38,14 @@ describe("Display", () => {
   });
 
   it("displays 'Locked' if the `locked` prop is `true`", () => {
-    const { getByText } = render(<Display locked={true} />);
+    const { getByText } = render(<Display locked />);
 
     getByText(/locked/i);
+  });
+
+  it("when unlocked or open, use the green-led class", () => {
+    const { getByTestId } = render(<Display locked={false} closed={false} />);
+
+    getByTestId(/green-led/i);
   });
 });
