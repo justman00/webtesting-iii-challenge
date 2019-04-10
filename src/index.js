@@ -6,9 +6,9 @@ import "./index.css";
 
 import Dashboard from "./dashboard/Dashboard";
 
-const store = createStore(reducer);
+//const store = createStore(reducer);
 
-function reducer(store = { closed: false, locked: false }, action) {
+export function reducer(store = { closed: false, locked: false }, action) {
   switch (action.type) {
     case "toggleLocked": {
       return { ...store, locked: !store.locked };
@@ -21,9 +21,9 @@ function reducer(store = { closed: false, locked: false }, action) {
   }
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Dashboard />
-  </Provider>,
-  document.getElementById("root")
-);
+// ReactDOM.render(
+//   //<Provider store={store}>
+//   <Dashboard />,
+//   //</Provider>
+//   document.getElementById("root")
+// );
